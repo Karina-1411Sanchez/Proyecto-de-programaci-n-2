@@ -30,10 +30,9 @@ Tecnologias
 - CSS: Diseño
 - 
 - Visual Studio Code: Editor de codigo
-  
+
 Integrantes
 -
 
 [Mayra Karina Sanchez Sanchez](https://github.com/Karina-1411Sanchez)
-
-- Visual Studio Code: Editor de codigo
+[Yurany Alejandra Pachon ](https://github.com/YURANYPACHON39)
