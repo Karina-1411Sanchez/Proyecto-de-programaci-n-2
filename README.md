@@ -28,10 +28,12 @@ Tecnologias
 - HTML: Estructura del contenido
 
 - CSS: Diseño
-
+- 
+- Visual Studio Code: Editor de codigo
+  
 Integrantes
 -
 
-Mayra Karina Sanchez Sanchez [Karina-1411Sanchez]
+Mayra Karina Sanchez Sanchez Karina-1411Sanchez
 
 - Visual Studio Code: Editor de codigo
