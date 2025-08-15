@@ -28,4 +28,5 @@ Tecnologias
 -HTML: Estructura del contenido
 
 -CSS: Diseño
+
 - Visual Studio Code: Editor de codigo
