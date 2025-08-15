@@ -18,3 +18,12 @@ Flujo del sistema
 2. Procesamiento
   - El sistema procesa la informacion y la guarda en una base de datos.
   - 
+
+
+Tecnologias
+-
+
+-Javascript :Lenguaje de programacion 
+-HTML: Estructura del contenido
+-CSS: Diseño
+- Visual Studio Code: Editor de codigo
