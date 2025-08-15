@@ -24,6 +24,8 @@ Tecnologias
 -
 
 -Javascript :Lenguaje de programacion 
+
 -HTML: Estructura del contenido
+
 -CSS: Diseño
 - Visual Studio Code: Editor de codigo
