@@ -34,6 +34,6 @@ Tecnologias
 Integrantes
 -
 
-[Mayra Karina Sanchez Sanchez]_(https://github.com/Karina-1411Sanchez)
+[Mayra Karina Sanchez Sanchez](https://github.com/Karina-1411Sanchez)
 
 - Visual Studio Code: Editor de codigo
