@@ -7,3 +7,4 @@ el cual se actualiza; Ofrece una forma interactiva y dinamica para el autoconoci
 
 Area
 -
+Pscologia aplicada al ambito universitario
