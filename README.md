@@ -29,4 +29,9 @@ Tecnologias
 
 - CSS: Diseño
 
+Integrantes
+-
+
+Mayra Karina Sanchez Sanchez [Karina-1411Sanchez]
+
 - Visual Studio Code: Editor de codigo
