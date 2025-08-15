@@ -8,7 +8,7 @@ autoconocimiento.
 
 Area
 -
-Pscologia aplicada al ambito universitario
+psicología  aplicada al ambito universitario
 
 Flujo del sistema 
 -
