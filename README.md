@@ -23,10 +23,10 @@ Flujo del sistema
 Tecnologias
 -
 
--Javascript :Lenguaje de programacion 
+- Javascript :Lenguaje de programacion 
 
--HTML: Estructura del contenido
+- HTML: Estructura del contenido
 
--CSS: Diseño
+- CSS: Diseño
 
 - Visual Studio Code: Editor de codigo
