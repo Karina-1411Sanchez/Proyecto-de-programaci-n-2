@@ -54,28 +54,31 @@ refleja la personalidad del usuario, el cual ofrece una forma interactiva y dina
 # Diagrama de Información
 
 ```mermaid
-mindmap
-  root((Usuario))
-    Registro / Login
-    Perfil de Usuario
-      Datos Personales
-      Historial de Cuestionarios
-    Cuestionarios
-      Hábitos Diarios
-      Gustos Personales
-      Estados Emocionales
-    Generación de Avatar
-      Colores según Emociones
-      Formas y Símbolos según Hábitos
-      Descripción de Personalidad (Texto)
-    Evolución y Estadísticas
-      Gráficos de Cambios en el Tiempo
-      Comparación de Períodos
-    Consejos Personalizados
-    Opciones Sociales (Opcional)
-      Comparación con Otros Usuarios
-      Compartir Avatar / Análisis
+flowchart TD
+    A[Usuario] --> B[Registro / Login]
+    A --> C[Perfil de Usuario]
+    C --> C1[Datos Personales]
+    C --> C2[Historial de Cuestionarios]
 
+    A --> D[Cuestionarios]
+    D --> D1[Hábitos Diarios]
+    D --> D2[Gustos Personales]
+    D --> D3[Estados Emocionales]
+
+    A --> E[Generación de Avatar]
+    E --> E1[Colores según Emociones]
+    E --> E2[Formas y Símbolos según Hábitos]
+    E --> E3[Descripción de Personalidad (Texto)]
+
+    A --> F[Evolución y Estadísticas]
+    F --> F1[Gráficos de Cambios en el Tiempo]
+    F --> F2[Comparación de Períodos]
+
+    A --> G[Consejos Personalizados]
+
+    A --> H[Opciones Sociales (Opcional)]
+    H --> H1[Comparación con Otros Usuarios]
+    H --> H2[Compartir Avatar / Análisis]
 
 
 ### Integrantes
