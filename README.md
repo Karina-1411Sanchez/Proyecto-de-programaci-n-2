@@ -47,7 +47,11 @@ refleja la personalidad del usuario, el cual ofrece una forma interactiva y dina
 - Javascript :Lenguaje de programacion 
 - HTML: Estructura del contenido
 - CSS: Diseño
- - Visual Studio Code: Editor de codigo
+- Visual Studio Code: Editor de codigo
+
+### Integrantes
+- [Yurany Alejandra Pachon ](https://github.com/YURANYPACHON39)
+- [Mayra Karina Sanchez Sanchez](https://github.com/Karina-1411Sanchez)
 
 ### Diagrama de información
 
@@ -78,9 +82,4 @@ flowchart TD
     H --> H1["Comparación con Otros Usuarios"]
     H --> H2["Compartir Avatar / Análisis"]
 
-
-
-### Integrantes
-- [Yurany Alejandra Pachon ](https://github.com/YURANYPACHON39)
-- [Mayra Karina Sanchez Sanchez](https://github.com/Karina-1411Sanchez)
 
