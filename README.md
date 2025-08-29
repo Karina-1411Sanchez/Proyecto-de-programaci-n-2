@@ -57,19 +57,17 @@ Usuario
   
   │
   ├─ Perfil de usuario
-  
   │     ├─ Datos personales
   
   │     └─ Historial de cuestionarios
   │
-  ├─ Cuestionarios
   
+  ├─ Cuestionarios
   │     ├─ Hábitos diarios
   
   │     ├─ Gustos personales
   
   │     └─ Estados emocionales
-  
   │
   ├─ Generación de Avatar
   
@@ -78,7 +76,6 @@ Usuario
   │     ├─ Formas y símbolos según hábitos
   
   │     └─ Descripción de personalidad (texto)
-  
   │
   ├─ Evolución y estadísticas
   
