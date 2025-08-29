@@ -9,6 +9,11 @@ refleja la personalidad del usuario, el cual ofrece una forma interactiva y dina
 ### Area
 - Psicología  aplicada al ambito universitario
 
+### Modulos del sistema 
+INICIO DE SESION:
+
+
+
 ### Tecnologias
 - Javascript :Lenguaje de programacion 
 
