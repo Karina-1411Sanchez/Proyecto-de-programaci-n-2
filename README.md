@@ -51,33 +51,31 @@ refleja la personalidad del usuario, el cual ofrece una forma interactiva y dina
 
 ### Diagrama de información
 
-Usuario
-│
-├── Registro / Login
-│
-├── Perfil de Usuario
-│   ├── Datos Personales
-│   └── Historial de Cuestionarios
-│
-├── Cuestionarios
-│   ├── Hábitos Diarios
-│   ├── Gustos Personales
-│   └── Estados Emocionales
-│
-├── Generación de Avatar
-│   ├── Colores según Emociones
-│   ├── Formas y Símbolos según Hábitos
-│   └── Descripción de Personalidad (Texto)
-│
-├── Evolución y Estadísticas
-│   ├── Gráficos de Cambios en el Tiempo
-│   └── Comparación de Períodos
-│
-├── Consejos Personalizados
-│
-└── Opciones Sociales (Opcional)
-    ├── Comparación con Otros Usuarios
-    └── Compartir Avatar / Análisis
+# Diagrama de Información
+
+```mermaid
+mindmap
+  root((Usuario))
+    Registro / Login
+    Perfil de Usuario
+      Datos Personales
+      Historial de Cuestionarios
+    Cuestionarios
+      Hábitos Diarios
+      Gustos Personales
+      Estados Emocionales
+    Generación de Avatar
+      Colores según Emociones
+      Formas y Símbolos según Hábitos
+      Descripción de Personalidad (Texto)
+    Evolución y Estadísticas
+      Gráficos de Cambios en el Tiempo
+      Comparación de Períodos
+    Consejos Personalizados
+    Opciones Sociales (Opcional)
+      Comparación con Otros Usuarios
+      Compartir Avatar / Análisis
+
 
 
 ### Integrantes
