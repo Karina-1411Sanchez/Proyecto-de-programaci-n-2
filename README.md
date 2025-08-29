@@ -54,30 +54,48 @@ refleja la personalidad del usuario, el cual ofrece una forma interactiva y dina
 Usuario
   │
   ├─ Registro/Login
+  
   │
   ├─ Perfil de usuario
+  
   │     ├─ Datos personales
+  
   │     └─ Historial de cuestionarios
   │
   ├─ Cuestionarios
+  
   │     ├─ Hábitos diarios
+  
   │     ├─ Gustos personales
+  
   │     └─ Estados emocionales
+  
   │
   ├─ Generación de Avatar
+  
   │     ├─ Colores según emociones
+  
   │     ├─ Formas y símbolos según hábitos
+  
   │     └─ Descripción de personalidad (texto)
+  
   │
   ├─ Evolución y estadísticas
+  
   │     ├─ Gráficos de cambios en tiempo
+  
   │     └─ Comparación de periodos
+  
   │
   ├─ Consejos personalizados
+  
   │
   └─ Opciones sociales (opcional)
+  
         ├─ Comparación con otros usuarios
+        
         └─ Compartir avatar/análisis
+        
 
 ### Integrantes
 - [Yurany Alejandra Pachon ](https://github.com/YURANYPACHON39)
