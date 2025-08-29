@@ -51,34 +51,33 @@ refleja la personalidad del usuario, el cual ofrece una forma interactiva y dina
 
 ### Diagrama de información
 
-# Diagrama de Información
-
 ```mermaid
 flowchart TD
-    A[Usuario] --> B[Registro / Login]
-    A --> C[Perfil de Usuario]
-    C --> C1[Datos Personales]
-    C --> C2[Historial de Cuestionarios]
+    A["Usuario"] --> B["Registro / Login"]
+    A --> C["Perfil de Usuario"]
+    C --> C1["Datos Personales"]
+    C --> C2["Historial de Cuestionarios"]
 
-    A --> D[Cuestionarios]
-    D --> D1[Hábitos Diarios]
-    D --> D2[Gustos Personales]
-    D --> D3[Estados Emocionales]
+    A --> D["Cuestionarios"]
+    D --> D1["Hábitos Diarios"]
+    D --> D2["Gustos Personales"]
+    D --> D3["Estados Emocionales"]
 
-    A --> E[Generación de Avatar]
-    E --> E1[Colores según Emociones]
-    E --> E2[Formas y Símbolos según Hábitos]
-    E --> E3[Descripción de Personalidad (Texto)]
+    A --> E["Generación de Avatar"]
+    E --> E1["Colores según Emociones"]
+    E --> E2["Formas y Símbolos según Hábitos"]
+    E --> E3["Descripción de Personalidad (Texto)"]
 
-    A --> F[Evolución y Estadísticas]
-    F --> F1[Gráficos de Cambios en el Tiempo]
-    F --> F2[Comparación de Períodos]
+    A --> F["Evolución y Estadísticas"]
+    F --> F1["Gráficos de Cambios en el Tiempo"]
+    F --> F2["Comparación de Períodos"]
 
-    A --> G[Consejos Personalizados]
+    A --> G["Consejos Personalizados"]
 
-    A --> H[Opciones Sociales (Opcional)]
-    H --> H1[Comparación con Otros Usuarios]
-    H --> H2[Compartir Avatar / Análisis]
+    A --> H["Opciones Sociales (Opcional)"]
+    H --> H1["Comparación con Otros Usuarios"]
+    H --> H2["Compartir Avatar / Análisis"]
+
 
 
 ### Integrantes
