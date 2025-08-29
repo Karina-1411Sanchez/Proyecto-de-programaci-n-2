@@ -52,47 +52,33 @@ refleja la personalidad del usuario, el cual ofrece una forma interactiva y dina
 ### Diagrama de información
 
 Usuario
-  │
-  ├─ Registro/Login
-  
-  │
-  ├─ Perfil de usuario
-  │     ├─ Datos personales
-  
-  │     └─ Historial de cuestionarios
-  │
-  
-  ├─ Cuestionarios
-  │     ├─ Hábitos diarios
-  
-  │     ├─ Gustos personales
-  
-  │     └─ Estados emocionales
-  │
-  ├─ Generación de Avatar
-  
-  │     ├─ Colores según emociones
-  
-  │     ├─ Formas y símbolos según hábitos
-  
-  │     └─ Descripción de personalidad (texto)
-  │
-  ├─ Evolución y estadísticas
-  
-  │     ├─ Gráficos de cambios en tiempo
-  
-  │     └─ Comparación de periodos
-  
-  │
-  ├─ Consejos personalizados
-  
-  │
-  └─ Opciones sociales (opcional)
-  
-        ├─ Comparación con otros usuarios
-        
-        └─ Compartir avatar/análisis
-        
+│
+├── Registro / Login
+│
+├── Perfil de Usuario
+│   ├── Datos Personales
+│   └── Historial de Cuestionarios
+│
+├── Cuestionarios
+│   ├── Hábitos Diarios
+│   ├── Gustos Personales
+│   └── Estados Emocionales
+│
+├── Generación de Avatar
+│   ├── Colores según Emociones
+│   ├── Formas y Símbolos según Hábitos
+│   └── Descripción de Personalidad (Texto)
+│
+├── Evolución y Estadísticas
+│   ├── Gráficos de Cambios en el Tiempo
+│   └── Comparación de Períodos
+│
+├── Consejos Personalizados
+│
+└── Opciones Sociales (Opcional)
+    ├── Comparación con Otros Usuarios
+    └── Compartir Avatar / Análisis
+
 
 ### Integrantes
 - [Yurany Alejandra Pachon ](https://github.com/YURANYPACHON39)
