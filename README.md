@@ -1,4 +1,3 @@
-# Programacion 2
 ## Reflexion virtual de personalidad
 ### Contexto
 En la actualidad, el autoconocimiento es importante para el desarrollo personal, academico y profesional.
