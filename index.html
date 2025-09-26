@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reflexión Virtual - Login</title>
+  <link rel="stylesheet" href="css/Estilos.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <header>
+    <h1>Reflexión Virtual</h1>
+  </header>
+
+  <div class="login-box">
+    <div class="icono">
+      <i class="fa fa-user"></i>
+    </div>
+    <h2>Iniciar Sesión</h2>
+    <form id="loginForm">
+      <div class="input-box">
+        <i class="fa fa-envelope"></i>
+        <input type="email" id="loginEmail" placeholder="Correo electrónico" required>
+      </div>
+      <div class="input-box">
+        <i class="fa fa-lock"></i>
+        <input type="password" id="loginPassword" placeholder="Contraseña" required>
+      </div>
+      <a href="registro.html" class="registro-link">¿No tienes cuenta? Regístrate aquí</a>
+      <button type="submit">Iniciar Sesión</button>
+    </form>
+  </div>
+
+  <script type="module" src="js/firebase-config.js"></script>
+  <script type="module" src="js/autenticacion.js"></script>
+</body>
+</html>

@@ -1,0 +1,111 @@
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+  background-image: url("../img/5UzeXQrw-Fondos-de-Pantalla-Morados-24.webp");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+
+header {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+header h1 {
+  font-size: 26px;
+  color: white;
+  font-weight: bold;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
+}
+.login-box {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  padding: 2.5rem;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+  text-align: center;
+  width: 350px;
+  color: white;
+}
+
+.login-box .icono {
+  background: #2d3436;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 15px auto;
+  font-size: 32px;
+  color: white;
+}
+
+.login-box h2 {
+  margin-bottom: 20px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.input-box {
+  display: flex;
+  align-items: center;
+  background: rgba(255,255,255,0.2);
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.input-box i {
+  margin-right: 10px;
+  color: #fff;
+}
+.input-box input {
+  border: none;
+  outline: none;
+  background: none;
+  color: white;
+  width: 100%;
+  font-size: 14px;
+}
+
+.input-box input::placeholder {
+  color: #f1f1f1;
+}
+.registro-link {
+  display: block;
+  margin: 12px 0;
+  color: #000000;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.registro-link:hover {
+  text-decoration: underline;
+}
+
+form button {
+  background: linear-gradient(135deg, #9b3dc7, #9140c0);
+  border: none;
+  color: white;
+  padding: 12px;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+  width: 100%;
+}
+
+form button:hover {
+  background: linear-gradient(135deg, #441861, #9e46d1);
+}
