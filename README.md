@@ -48,7 +48,7 @@ refleja la personalidad del usuario, el cual ofrece una forma interactiva y dina
 - CSS: Diseño
 - Visual Studio Code: Editor de codigo
 - Chart.js: Graficas dinamicas
-- MongoDB: base de datos.
+- Firebase: base de datos.
 
 ### Integrantes
 - [Yurany Alejandra Pachon ](https://github.com/YURANYPACHON39)
