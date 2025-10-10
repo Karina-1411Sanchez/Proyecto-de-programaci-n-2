@@ -12,10 +12,10 @@ if (btnRegister) {
 
     try {
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-      alert("✅ Usuario registrado: " + userCredential.user.email);
-      window.location.href = "iniciar-sesion.html"; 
+      alert(" Usuario registrado: " + userCredential.user.email);
+      window.location.href = "perfil.html"; 
     } catch (error) {
-      alert("❌ Error en registro: " + error.message);
+      alert(" Error en registro: " + error.message);
     }
   });
 }
@@ -28,10 +28,11 @@ if (btnLogin) {
 
     try {
       const userCredential = await signInWithEmailAndPassword(auth, email, password);
-      alert("✅ Bienvenido: " + userCredential.user.email);
-      document.getElementById("btnLogout").style.display = "block"; // Mostrar botón logout
+      alert(" Bienvenido: " + userCredential.user.email);
+      window.location.href = "/PROYECTO-DE-PROGRAMACI-N-2/perfil.html";
+      document.getElementById("btnLogout").style.display = "block"; 
     } catch (error) {
-      alert("❌ Error en login: " + error.message);
+      alert(" Error en login: " + error.message);
     }
   });
 }
@@ -41,10 +42,11 @@ if (btnLogout) {
   btnLogout.addEventListener("click", async () => {
     try {
       await signOut(auth);
-      alert("👋 Sesión cerrada");
-      document.getElementById("btnLogout").style.display = "none"; // Ocultar botón logout
+      alert(" Sesión cerrada");
+      window.location.href = "/PROYECTO-DE-PROGRAMACI-N-2/index.html";
+      document.getElementById("btnLogout").style.display = "none"; 
     } catch (error) {
-      alert("❌ Error al cerrar sesión: " + error.message);
+      alert(" Error al cerrar sesión: " + error.message);
     }
   });
 }
