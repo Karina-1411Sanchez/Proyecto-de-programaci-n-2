@@ -29,8 +29,7 @@ if (btnLogin) {
     try {
       const userCredential = await signInWithEmailAndPassword(auth, email, password);
       alert(" Bienvenido: " + userCredential.user.email);
-      window.location.href = "/PROYECTO-DE-PROGRAMACI-N-2/perfil.html";
-      document.getElementById("btnLogout").style.display = "block"; 
+      window.location.href = "perfil.html"; 
     } catch (error) {
       alert(" Error en login: " + error.message);
     }
@@ -42,9 +41,8 @@ if (btnLogout) {
   btnLogout.addEventListener("click", async () => {
     try {
       await signOut(auth);
-      alert(" Sesión cerrada");
-      window.location.href = "/PROYECTO-DE-PROGRAMACI-N-2/index.html";
-      document.getElementById("btnLogout").style.display = "none"; 
+      alert(" La sesion se cerro correctamente");
+      window.location.href = "index.html"; 
     } catch (error) {
       alert(" Error al cerrar sesión: " + error.message);
     }

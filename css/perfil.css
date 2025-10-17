@@ -1,0 +1,24 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: #f2f4f7;
+}
+
+.contenedor {
+  margin-top: 100px;
+}
+
+.botones button {
+  margin: 10px;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  background-color: #a950d2;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.botones button:hover {
+  background-color: #a950d2;
+}
