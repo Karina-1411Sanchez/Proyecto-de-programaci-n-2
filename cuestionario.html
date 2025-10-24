@@ -1,15 +1,82 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cuestionario</title>
-    <link rel="stylesheet" href="css/cuestionario.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cuestionario de Autoevaluación</title>
+  <link rel="stylesheet" href="css/cuestionario.css">
 </head>
 <body>
   <header>
-    <h1>Cuestionario de autoevaluación</h1>
+    <h1>Cuestionario de Autoevaluación</h1>
   </header>
+  <main>
+    <form id="formCuestionario">
 
+      <section>
+        <h2>Hábitos saludables</h2>
+
+        <label>1. ¿Cuántas horas duermes en la noche?</label>
+        <input type="text" name="horasSueño" required>
+
+        <label>2. ¿comes frutas y verduras diariamente?</label>
+        <input type="text" name="desayuno" required>
+
+        <label>3. ¿cuantos dias a la semana haces ejercicio?</label>
+        <input type="text" name="ejercicio" required>
+
+        <label>4. ¿Tomas agua frecuentemente?</label>
+        <input type="text" name="saludFisica" required>
+
+        <label>5. ¿Que deporte practicas mas?</label>
+        <input type="text" name="saludFisica" required>
+
+      </section>
+
+      <section>
+        <h2>Gustos personales</h2>
+
+        <label>1. ¿Que te gusta hacer en los tiempos libres?</label>
+        <input type="text" name="actividadesFavoritas" required>
+
+        <label>2. ¿Qué tipo de música te gusta escuchar?</label>
+        <input type="text" name="musica" required>
+
+        <label>3. ¿Que Lugares te gusta visitar?</label>
+        <input type="text" name="lugaresFavoritos" required>
+
+        <label>4. ¿Cual es tu comida favorita?</label>
+        <input type="text" name="Gustos" required>
+      </section>
+
+      <section>
+        <h2>Estados emocionales</h2>
+
+        <label>1. ¿Cómo te has sentido emocionalmente esta semana?</label>
+        <input type="text" name="estadoAnimo" required>
+
+        <label>2. ¿Te estresas frecuentemente?</label>
+        <input type="text" name="estres" required>
+
+        <label>3. ¿Qué haces para relajarte ?</label>
+        <input type="text" name="relajacion" required>
+
+        <label>4. ¿Qué te da felicidad?</label>
+        <input type="text" name="felicidad" required>
+      </section>
+
+      <div class="botones">
+        <button type="submit">Enviar respuestas</button>
+        <button type="button" onclick="volverPerfil()">Volver al perfil</button>
+      </div>
+    </form>
+  </main>
+
+  <script>
+    function volverPerfil() {
+      window.location.href = "perfil.html";
+    }
+  </script>
 </body>
 </html>
+
