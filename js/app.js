@@ -1,56 +1,73 @@
-import { app } from "./firebaseConfig.js";
-import { 
-  getAuth, 
-  createUserWithEmailAndPassword, 
-  signInWithEmailAndPassword, 
-  signOut 
-} from "https://www.gstatic.com/firebasejs/12.3.0/firebase-auth.js";
+import { auth } from "./firebase-config.js";
 
-const auth = getAuth(app);
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  onAuthStateChanged,
+  signOut
+} from "https://www.gstatic.com/firebasejs/10.14.0/firebase-auth.js";
 
-const emailRegistro = document.getElementById("emailRegistro");
-const passwordRegistro = document.getElementById("passwordRegistro");
-const btnRegistro = document.getElementById("btnRegistro");
+const loginForm = document.getElementById("loginForm");
+const registerForm = document.getElementById("registerForm");
 
-const emailLogin = document.getElementById("emailLogin");
-const passwordLogin = document.getElementById("passwordLogin");
-const btnLogin = document.getElementById("btnLogin");
+loginForm.addEventListener("submit", async (e) => {
+  e.preventDefault();
 
-const btnLogout = document.getElementById("btnLogout");
+  const email = document.getElementById("loginEmail").value;
+  const password = document.getElementById("loginPassword").value;
 
-btnRegistro.addEventListener("click", async () => {
   try {
-    const userCredential = await createUserWithEmailAndPassword(
-      auth, 
-      emailRegistro.value, 
-      passwordRegistro.value
-    );
-    alert("Usuario registrado: " + userCredential.user.email);
+    await signInWithEmailAndPassword(auth, email, password);
+    alert("Inicio de sesión exitoso");
+    window.location.href = "cuestionario.html"; 
   } catch (error) {
-    alert("Error: " + error.message);
+    console.error(error);
+    alert("Error al iniciar sesión: " + traducirError(error.code));
   }
 });
 
-btnLogin.addEventListener("click", async () => {
+registerForm.addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const email = document.getElementById("registerEmail").value;
+  const password = document.getElementById("registerPassword").value;
+
   try {
-    const userCredential = await signInWithEmailAndPassword(
-      auth, 
-      emailLogin.value, 
-      passwordLogin.value
-    );
-    alert("Bienvenido: " + userCredential.user.email);
-    btnLogout.style.display = "block";
+    await createUserWithEmailAndPassword(auth, email, password);
+    alert("Registro exitoso. Ahora puedes iniciar sesión.");
+    window.location.reload(); // Vuelve al login
   } catch (error) {
-    alert("Error: " + error.message);
+    console.error(error);
+    alert("Error al registrarte: " + traducirError(error.code));
   }
 });
 
-btnLogout.addEventListener("click", async () => {
+// === OBSERVADOR DE SESIÓN ===
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+    console.log("Usuario activo:", user.email);
+  } else {
+    console.log("Ningún usuario ha iniciado sesión");
+  }
+});
+
+export async function cerrarSesion() {
   try {
     await signOut(auth);
-    alert("Sesión cerrada");
-    btnLogout.style.display = "none";
+    alert("Sesión cerrada correctamente");
+    window.location.href = "index.html";
   } catch (error) {
-    alert("Error: " + error.message);
+    console.error("Error al cerrar sesión:", error);
   }
-});
+}
+
+function traducirError(codigo) {
+  const errores = {
+    "auth/email-already-in-use": "El correo ya está registrado.",
+    "auth/invalid-email": "El correo no es válido.",
+    "auth/weak-password": "La contraseña es muy débil (mínimo 6 caracteres).",
+    "auth/user-not-found": "No se encontró una cuenta con este correo.",
+    "auth/wrong-password": "Contraseña incorrecta.",
+  };
+  return errores[codigo] || "Ocurrió un error inesperado.";
+}

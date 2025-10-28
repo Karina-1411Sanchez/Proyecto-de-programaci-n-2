@@ -1,14 +1,73 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resultados</title>
-    <link rel="stylesheet" href="css/resultados.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resultado del Día - Reflexión Virtual</title>
+  <link rel="stylesheet" href="css/estilos.css">
 </head>
 <body>
-      <header>
-    <h1>Resultados</h1>
+
+  <header class="panel-superior">
+    <h1 class="titulo-app">Reflexión Virtual</h1>
+    <nav>
+      <button onclick="window.location.href='cuestionario.html'">Nuevo Cuestionario</button>
+      <button onclick="window.location.href='perfil.html'">Ver mi Perfil</button>
+      <button onclick="cerrarSesion()">Cerrar sesión</button>
+    </nav>
   </header>
+
+  <main class="cuestionario-contenido">
+    <section class="resultados">
+      <h2>Tu resultado de hoy</h2>
+      
+      <div class="avatar-contenedor">
+        <img id="avatarImg" src="img/avatar_neutro.png" alt="Avatar emocional">
+      </div>
+
+      <p id="mensajeResultado">
+        ¡Gracias por reflexionar hoy! Según tus respuestas, parece que tu día fue equilibrado.  
+        Recuerda que tomarte un momento para ti siempre es valioso 💜
+      </p>
+
+      <button class="boton-final" onclick="window.location.href='perfil.html'">Ver progreso semanal</button>
+    </section>
+  </main>
+
+  <script type="module" src="js/firebase-config.js"></script>
+  <script>
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const params = new URLSearchParams(window.location.search);
+      const estado = params.get("estado") || "neutral"; 
+      
+      const avatarImg = document.getElementById("avatarImg");
+      const mensajeResultado = document.getElementById("mensajeResultado");
+
+      switch (estado) {
+        case "feliz":
+          avatarImg.src = "img/avatar_feliz.png";
+          mensajeResultado.textContent = "¡Te sientes con energía positiva hoy! Mantén esa actitud y compártela con los demás 🌞";
+          break;
+        case "triste":
+          avatarImg.src = "img/avatar_triste.png";
+          mensajeResultado.textContent = "Hoy no fue tu mejor día, y está bien. Permítete sentir y busca algo que te haga sonreír 💜";
+          break;
+        case "estresado":
+          avatarImg.src = "img/avatar_estresado.png";
+          mensajeResultado.textContent = "Tu nivel de estrés está alto. Respira profundo, date un descanso y prioriza lo que realmente importa 🌿";
+          break;
+        default:
+          avatarImg.src = "img/avatar_neutro.png";
+          mensajeResultado.textContent = "Parece que tu día fue tranquilo. Aprovecha esta calma para recargar energías ✨";
+          break;
+      }
+    });
+
+    function cerrarSesion() {
+      window.location.href = "index.html";
+    }
+  </script>
+
 </body>
 </html>

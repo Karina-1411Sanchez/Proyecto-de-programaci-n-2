@@ -1,23 +1,19 @@
 body {
   margin: 0;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-
   background-image: url("../img/5UzeXQrw-Fondos-de-Pantalla-Morados-24.webp");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
+  color: white;
+  overflow-x: hidden;
 }
-
 
 header {
   position: absolute;
-  top: 20px;
-  left: 20px;
+  top: 25px;
+  left: 30px;
 }
 
 header h1 {
@@ -26,86 +22,334 @@ header h1 {
   font-weight: bold;
   text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
 }
-.login-box {
-  background: rgba(255, 255, 255, 0.15);
+
+.panel-superior {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 97%;
+  height: 65px;
+  background: linear-gradient(135deg, #5a189a, #7b2cbf, #9d4edd);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+  backdrop-filter: blur(20px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
+  z-index: 1000;
+}
+
+.panel-superior .titulo-app {
+  color: #fff;
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.panel-superior nav {
+  display: flex;
+  gap: 20px;
+}
+
+.panel-superior nav button {
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.panel-superior nav button:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: #fff;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+}
+
+.contenedor {
+  background: rgba(255, 255, 255, 0.10);
   backdrop-filter: blur(10px);
   padding: 2.5rem;
   border-radius: 20px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.4);
   text-align: center;
-  width: 350px;
+  width: 380px;
   color: white;
+  margin: 120px auto 0 auto;
 }
 
-.login-box .icono {
-  background: #2d3436;
-  width: 80px;
-  height: 80px;
+.cuestionario-contenido {
+  margin-top: 120px;
+  background: linear-gradient(145deg, #ffffffc9, #f3e9ffcc);
+  color: #3a2856;
+  border-radius: 25px;
+  padding: 50px 40px;
+  width: 90%;
+  max-width: 850px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.25);
+  animation: fadeIn 0.6s ease-in-out;
+  backdrop-filter: blur(20px);
+}
+
+.cuestionario-contenido h2 {
+  font-size: 32px;
+  color: #5e2eb9;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.cuestionario-contenido p {
+  font-size: 17px;
+  color: #4e3c7f;
+  margin-bottom: 25px;
+  text-align: center;
+  line-height: 1.7;
+}
+
+/* ===== PREGUNTAS ===== */
+.pregunta {
+  background: rgba(255, 255, 255, 0.65);
+  border-left: 6px solid #b57bff;
+  border-radius: 15px;
+  padding: 20px 25px;
+  margin-bottom: 25px;
+  transition: all 0.3s ease;
+}
+
+.pregunta:hover {
+  background: rgba(255, 255, 255, 0.85);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 20px rgba(181, 123, 255, 0.2);
+}
+
+.pregunta h3 {
+  color: #5e2eb9;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.pregunta label {
+  display: block;
+  margin-bottom: 8px;
+  color: #3a2856;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.pregunta input[type="radio"] {
+  margin-right: 8px;
+}
+
+.boton-final {
+  background: linear-gradient(135deg, #a855f7, #7e22ce);
+  border: none;
+  color: white;
+  padding: 14px 25px;
+  border-radius: 12px;
+  font-size: 17px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 25px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.boton-final:hover {
+  background: linear-gradient(135deg, #7e22ce, #6b21a8);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(128, 51, 206, 0.4);
+}
+
+.resultados {
+  font-size: 18px;
+  background: linear-gradient(145deg, #faf5ff, #ede2ff);
+  color: #4b2377;
+  padding: 30px;
+  border-radius: 20px;
+  margin-top: 30px;
+  box-shadow: 0 6px 25px rgba(0,0,0,0.1);
+  text-align: center;
+  font-weight: 500;
+}
+
+.perfil-seccion {
+  margin-top: 120px;
+  background: linear-gradient(145deg, #ffffffc9, #f5ecffb4);
+  color: #3a2856;
+  border-radius: 25px;
+  padding: 50px 40px;
+  width: 420px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(18px);
+  animation: fadeIn 0.6s ease-in-out;
+  text-align: center;
+}
+
+.perfil-foto {
+  position: relative;
+  display: inline-block;
+  margin: 20px 0;
+  z-index: 5;
+}
+
+.perfil-foto img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #c4a5ff;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  display: block;
+}
+
+.perfil-foto img:hover + .foto-overlay {
+  opacity: 1;
+}
+
+.foto-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 150px;
+  height: 150px;
+  background: rgba(0, 0, 0, 0.55);
   border-radius: 50%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 0 auto 15px auto;
-  font-size: 32px;
-  color: white;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: 10;
 }
 
-.login-box h2 {
-  margin-bottom: 20px;
+.foto-overlay button {
+  background: rgba(255, 255, 255, 0.92);
+  border: none;
+  padding: 6px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 13px;
   font-weight: 600;
-  color: #fff;
+  transition: background 0.3s ease;
+  pointer-events: all;
 }
 
-.input-box {
-  display: flex;
-  align-items: center;
-  background: rgba(255,255,255,0.2);
-  margin: 10px 0;
-  padding: 10px;
-  border-radius: 10px;
+.foto-overlay button:hover {
+  background: #d1b2f5;
 }
 
-.input-box i {
-  margin-right: 10px;
-  color: #fff;
-}
-.input-box input {
-  border: none;
-  outline: none;
-  background: none;
+.foto-overlay .btn-eliminar {
+  margin-top: 5px;
+  padding: 4px 8px;
+  font-size: 11px;
+  background: rgba(255, 80, 80, 0.9);
   color: white;
-  width: 100%;
-  font-size: 14px;
 }
 
-.input-box input::placeholder {
-  color: #f1f1f1;
-}
-.registro-link {
-  display: block;
-  margin: 12px 0;
-  color: #000000;
-  text-decoration: none;
-  font-size: 14px;
+.foto-overlay .btn-eliminar:hover {
+  background: #ff4a4a;
 }
 
-.registro-link:hover {
-  text-decoration: underline;
+.acciones-perfil {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
 }
 
-form button {
-  background: linear-gradient(135deg, #9b3dc7, #9140c0);
+.boton-eliminar {
+  background: #e63946;
+  color: white;
   border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: 0.3s;
+  margin-top: 20px;
+}
+
+.boton-eliminar:hover {
+  background: #c8192e;
+  transform: scale(1.05);
+}
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.tabla-semanal table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  color: #2b0f55;
+  font-size: 15px;
+}
+
+.tabla-semanal th {
+  background: linear-gradient(135deg, #a678f1, #b58cff);
   color: white;
   padding: 12px;
-  border-radius: 10px;
-  font-size: 16px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.3s;
-  width: 100%;
+  border-bottom: 3px solid #8c62d8;
+  text-align: center;
+  font-weight: 600;
 }
 
-form button:hover {
-  background: linear-gradient(135deg, #441861, #9e46d1);
+.tabla-semanal td {
+  background: rgba(255, 255, 255, 0.85);
+  padding: 10px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.tabla-semanal tr:hover td {
+  background: rgba(232, 220, 255, 0.9);
+}
+
+.estado-feliz {
+  color: #28a745;
+  font-weight: 600;
+}
+
+.estado-triste {
+  color: #0077b6;
+  font-weight: 600;
+}
+
+.estado-enojado {
+  color: #d62828;
+  font-weight: 600;
+}
+
+.estado-ansioso {
+  color: #ff8c00;
+  font-weight: 600;
+}
+
+.estado-neutral {
+  color: #6c757d;
+  font-weight: 600;
 }

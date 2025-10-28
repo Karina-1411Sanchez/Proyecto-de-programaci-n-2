@@ -1,82 +1,165 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cuestionario de Autoevaluación</title>
-  <link rel="stylesheet" href="css/cuestionario.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cuestionario Diario - Reflexión Virtual</title>
+  <link rel="stylesheet" href="css/estilos.css" />
 </head>
-<body>
-  <header>
-    <h1>Cuestionario de Autoevaluación</h1>
+<body class="fondo-cuestionario">
+
+  <header class="panel-superior">
+    <h1 class="titulo-app">Reflexión Virtual</h1>
+    <nav>
+      <button id="perfilBtn">Perfil</button>
+      <button id="cerrarSesionBtn">Cerrar sesión</button>
+    </nav>
   </header>
-  <main>
+
+  <main class="cuestionario-contenido">
+    <h2>Cuestionario diario de bienestar 🌿</h2>
+    <p>Responde con calma y sinceridad. Tus respuestas te ayudarán a reflexionar y mejorar tu bienestar emocional.</p>
+
     <form id="formCuestionario">
 
-      <section>
-        <h2>Hábitos saludables</h2>
+      <div class="pregunta">
+        <h3>1. ¿Cómo te sientes hoy?</h3>
+        <label><input type="radio" name="animo" value="Feliz" required> 😊 Feliz</label>
+        <label><input type="radio" name="animo" value="Triste"> 😢 Triste</label>
+        <label><input type="radio" name="animo" value="Estresado"> 😣 Estresado</label>
+        <label><input type="radio" name="animo" value="Tranquilo"> 😌 Tranquilo</label>
+        <label><input type="radio" name="animo" value="Ansioso"> 😬 Ansioso</label>
+      </div>
 
-        <label>1. ¿Cuántas horas duermes en la noche?</label>
-        <input type="text" name="horasSueño" required>
+      <div class="pregunta">
+        <h3>2. ¿Qué nivel de energía sientes hoy?</h3>
+        <label><input type="radio" name="energia" value="Alta" required> 🔥 Alta</label>
+        <label><input type="radio" name="energia" value="Media"> ⚡ Media</label>
+        <label><input type="radio" name="energia" value="Baja"> 🌙 Baja</label>
+      </div>
 
-        <label>2. ¿comes frutas y verduras diariamente?</label>
-        <input type="text" name="desayuno" required>
+      <!-- DESCANSO -->
+      <div class="pregunta">
+        <h3>3. ¿Cómo dormiste anoche?</h3>
+        <label><input type="radio" name="descanso" value="Bien" required> 😴 Bien</label>
+        <label><input type="radio" name="descanso" value="Regular"> 😕 Regular</label>
+        <label><input type="radio" name="descanso" value="Mal"> 😫 Mal</label>
+      </div>
 
-        <label>3. ¿cuantos dias a la semana haces ejercicio?</label>
-        <input type="text" name="ejercicio" required>
+      <div class="pregunta">
+        <h3>4. ¿Qué tan concentrado/a te sientes hoy?</h3>
+        <label><input type="radio" name="concentracion" value="Muy concentrado" required> 🎯 Muy concentrado/a</label>
+        <label><input type="radio" name="concentracion" value="Poco concentrado"> 😵 Poco concentrado/a</label>
+        <label><input type="radio" name="concentracion" value="Distraído"> 💭 Distraído/a</label>
+      </div>
 
-        <label>4. ¿Tomas agua frecuentemente?</label>
-        <input type="text" name="saludFisica" required>
+      <div class="pregunta">
+        <h3>5. ¿Cómo han sido tus interacciones con los demás hoy?</h3>
+        <label><input type="radio" name="relaciones" value="Positivas" required> 💬 Positivas</label>
+        <label><input type="radio" name="relaciones" value="Neutras"> 😐 Neutras</label>
+        <label><input type="radio" name="relaciones" value="Difíciles"> 😠 Difíciles</label>
+      </div>
 
-        <label>5. ¿Que deporte practicas mas?</label>
-        <input type="text" name="saludFisica" required>
+      <div class="pregunta">
+        <h3>6. ¿Qué tan motivado/a te sientes hoy?</h3>
+        <label><input type="radio" name="motivacion" value="Muy motivado" required> 🚀 Muy motivado/a</label>
+        <label><input type="radio" name="motivacion" value="Algo motivado"> 🙂 Algo motivado/a</label>
+        <label><input type="radio" name="motivacion" value="Sin motivación"> 😔 Sin motivación</label>
+      </div>
 
-      </section>
+      <div class="pregunta">
+        <h3>7. ¿Sientes que hoy el estrés te está afectando?</h3>
+        <label><input type="radio" name="estres" value="No"> 🌼 No mucho</label>
+        <label><input type="radio" name="estres" value="Moderado"> 😐 Un poco</label>
+        <label><input type="radio" name="estres" value="Alto"> 😣 Bastante</label>
+      </div>
 
-      <section>
-        <h2>Gustos personales</h2>
+      <div class="pregunta">
+        <h3>8. ¿Has pensado en algo por lo que estés agradecido hoy?</h3>
+        <label><input type="radio" name="agradecimiento" value="Sí" required> 💖 Sí</label>
+        <label><input type="radio" name="agradecimiento" value="No"> 🙁 No</label>
+      </div>
 
-        <label>1. ¿Que te gusta hacer en los tiempos libres?</label>
-        <input type="text" name="actividadesFavoritas" required>
+      <div class="pregunta">
+        <h3>9. ¿Qué te gustaría mejorar o cuidar más hoy?</h3>
+        <label><input type="checkbox" name="mejorar" value="Paciencia"> 🕊️ Paciencia</label>
+        <label><input type="checkbox" name="mejorar" value="Motivación"> 💪 Motivación</label>
+        <label><input type="checkbox" name="mejorar" value="Descanso"> 😴 Descanso</label>
+        <label><input type="checkbox" name="mejorar" value="Concentración"> 🧠 Concentración</label>
+        <label><input type="checkbox" name="mejorar" value="Relaciones"> ❤️ Relaciones</label>
+        <label><input type="checkbox" name="mejorar" value="Autoestima"> 🌺 Autoestima</label>
+      </div>
 
-        <label>2. ¿Qué tipo de música te gusta escuchar?</label>
-        <input type="text" name="musica" required>
+      <div class="pregunta">
+        <h3>10. ¿Cómo describirías tu día en una palabra?</h3>
+        <input type="text" name="palabra" placeholder="Ejemplo: tranquilo, complicado, alegre..." required>
+      </div>
 
-        <label>3. ¿Que Lugares te gusta visitar?</label>
-        <input type="text" name="lugaresFavoritos" required>
-
-        <label>4. ¿Cual es tu comida favorita?</label>
-        <input type="text" name="Gustos" required>
-      </section>
-
-      <section>
-        <h2>Estados emocionales</h2>
-
-        <label>1. ¿Cómo te has sentido emocionalmente esta semana?</label>
-        <input type="text" name="estadoAnimo" required>
-
-        <label>2. ¿Te estresas frecuentemente?</label>
-        <input type="text" name="estres" required>
-
-        <label>3. ¿Qué haces para relajarte ?</label>
-        <input type="text" name="relajacion" required>
-
-        <label>4. ¿Qué te da felicidad?</label>
-        <input type="text" name="felicidad" required>
-      </section>
-
-      <div class="botones">
-        <button type="submit">Enviar respuestas</button>
-        <button type="button" onclick="volverPerfil()">Volver al perfil</button>
+      <div class="boton-centro">
+        <button type="submit" class="boton-final">Enviar respuestas</button>
       </div>
     </form>
   </main>
 
+  <script type="module" src="js/firebase-config.js"></script>
   <script>
-    function volverPerfil() {
+    document.getElementById("perfilBtn").addEventListener("click", () => {
       window.location.href = "perfil.html";
+    });
+    document.getElementById("cerrarSesionBtn").addEventListener("click", () => {
+      localStorage.clear();
+      window.location.href = "index.html";
+    });
+
+    function generarConsejo(estado) {
+      const consejos = {
+        Feliz: "Mantén esa energía y compártela con los demás 🌞",
+        Triste: "Tómate un momento para ti, escuchar música o escribir puede ayudarte 💜",
+        Estresado: "Recuerda que todo pasa, respira profundo y date un descanso 🌸",
+        Tranquilo: "Aprovecha tu serenidad para hacer algo que te inspire ☕",
+        Ansioso: "Concéntrate en el presente y haz algo que te relaje 🌿",
+        Positivas: "Rodearte de personas que te sumen mejora tus días 💫",
+        Difíciles: "Respira antes de reaccionar, la calma siempre ayuda 🌼",
+        Alta: "Aprovecha tu energía para avanzar en tus metas 🚀",
+        Baja: "No te presiones, descansar también es productivo 🌙",
+        Bien: "Dormir bien te da poder para tener un gran día 💪",
+        Mal: "Evita pantallas antes de dormir, tu cuerpo necesita desconectarse 🌌",
+        MuyMotivado: "Sigue soñando alto, cada paso cuenta 🌠",
+        SinMotivacion: "No te castigues, incluso los días lentos suman 🌾",
+        Sí: "Agradecer te conecta con lo que realmente importa 💖",
+        No: "Busca algo pequeño que te haga sonreír hoy 🌈"
+      };
+      return consejos[estado] || "Recuerda que cada día es una nueva oportunidad para crecer 🌻";
     }
+
+    // === GUARDAR Y REDIRIGIR ===
+    document.getElementById("formCuestionario").addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      const form = e.target;
+      const data = new FormData(form);
+      const respuestas = Object.fromEntries(data.entries());
+
+      const mejoras = Array.from(document.querySelectorAll('input[name="mejorar"]:checked')).map(i => i.value);
+      respuestas.mejoras = mejoras;
+
+      const animo = respuestas.animo;
+      const consejo = generarConsejo(animo);
+
+      const resultado = {
+        fecha: new Date().toLocaleDateString("es-ES", { weekday: 'long', day: 'numeric', month: 'long' }),
+        ...respuestas,
+        consejo
+      };
+
+      localStorage.setItem("resultadoDiario", JSON.stringify(resultado));
+
+      const semana = JSON.parse(localStorage.getItem("emocionesSemanales")) || [];
+      semana.push({ dia: resultado.fecha, estado: animo, consejo });
+      localStorage.setItem("emocionesSemanales", JSON.stringify(semana));
+
+      window.location.href = "resultados.html";
+    });
   </script>
 </body>
 </html>
-

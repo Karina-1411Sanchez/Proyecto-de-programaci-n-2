@@ -1,37 +1,81 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Reflexión Virtual - Login</title>
-  <link rel="stylesheet" href="css/Estilos.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reflexión Virtual</title>
+  <link rel="stylesheet" href="css/estilos.css">
+  <script type="module" src="js/app.js"></script>
 </head>
 <body>
   <header>
     <h1>Reflexión Virtual</h1>
   </header>
 
-  <div class="login-box">
-    <div class="icono">
-      <i class="fa fa-user"></i>
-    </div>
-    <h2>Iniciar Sesión</h2>
-    <form id="loginForm">
-      <div class="input-box">
-        <i class="fa fa-envelope"></i>
-        <input type="email" id="loginEmail" placeholder="Correo electrónico" required>
-      </div>
-      <div class="input-box">
-        <i class="fa fa-lock"></i>
-        <input type="password" id="loginPassword" placeholder="Contraseña" required>
-      </div>
-      <a href="registro.html" class="registro-link">¿No tienes cuenta? Regístrate aquí</a>
-      <button type="button" id="btnLogin">Iniciar Sesión</button>
-    </form>
-  </div>
+  <main class="contenedor">
+    <section id="login" class="seccion activa">
+      <h2>Iniciar Sesión</h2>
+      <form id="loginForm">
+        <div class="input-box">
+          <i class="fas fa-envelope"></i>
+          <input type="email" id="loginEmail" placeholder="Correo electrónico" required>
+        </div>
+        <div class="input-box">
+          <i class="fas fa-lock"></i>
+          <input type="password" id="loginPassword" placeholder="Contraseña" required>
+        </div>
+        <a href="#" class="registro-link" id="mostrarRegistro">¿No tienes cuenta? Regístrate aquí</a>
+        <button type="submit">Iniciar sesión</button>
+      </form>
+    </section>
 
+    <section id="registro" class="seccion">
+      <h2>Registro</h2>
+      <form id="registerForm">
+        <div class="input-box">
+          <i class="fas fa-user"></i>
+          <input type="text" id="registerName" placeholder="Nombre completo" required>
+        </div>
+        <div class="input-box">
+          <i class="fas fa-envelope"></i>
+          <input type="email" id="registerEmail" placeholder="Correo electrónico" required>
+        </div>
+        <div class="input-box">
+          <i class="fas fa-lock"></i>
+          <input type="password" id="registerPassword" placeholder="Contraseña" required>
+        </div>
+        <a href="#" class="registro-link" id="mostrarLogin">¿Ya tienes cuenta? Inicia sesión</a>
+        <button type="submit">Registrarse</button>
+      </form>
+    </section>
+  </main>
+
+  <script src="https://kit.fontawesome.com/a2e0e6adf3.js" crossorigin="anonymous"></script>
+
+  <script>
+    const loginSection = document.getElementById('login');
+    const registerSection = document.getElementById('registro');
+    const mostrarRegistro = document.getElementById('mostrarRegistro');
+    const mostrarLogin = document.getElementById('mostrarLogin');
+
+    mostrarRegistro.addEventListener('click', (e) => {
+      e.preventDefault();
+      loginSection.classList.remove('activa');
+      registerSection.classList.add('activa');
+    });
+
+    mostrarLogin.addEventListener('click', (e) => {
+      e.preventDefault();
+      registerSection.classList.remove('activa');
+      loginSection.classList.add('activa');
+    });
+  </script>
+  <script type="module" src="js/app.js"></script>
   <script type="module" src="js/firebase-config.js"></script>
   <script type="module" src="js/autenticacion.js"></script>
+
+  
+
+
 </body>
 </html>

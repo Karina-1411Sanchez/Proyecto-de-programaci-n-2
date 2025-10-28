@@ -1,23 +1,132 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perfil de usuario</title>
-      <link rel="stylesheet" href="css/perfil.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mi Perfil - Reflexión Virtual</title>
+  <link rel="stylesheet" href="css/estilos.css" />
 </head>
 <body>
-   <header>
-    <h1> Bienvenido a reflexión virtual de personalidad</h1>
-    </header>
-        
-    <main class="contenedor">
-      <div class="botones">
-<button onclick="irACuestionario()">Cuestionario</button>
-<button onclick="irAResultados()">Resultados</button>
 
+  <header class="panel-superior">
+    <h1 class="titulo-app">Reflexión Virtual</h1>
+    <nav>
+      <button onclick="window.location.href='cuestionario.html'">Nuevo cuestionario</button>
+      <button onclick="window.location.href='resultados.html'">Ver resultado de hoy</button>
+      <button onclick="cerrarSesion()">Cerrar sesión</button>
+    </nav>
+  </header>
+
+  <main class="cuestionario-contenido">
+    <section class="perfil-seccion">
+      <h2>Mi perfil</h2>
+
+      <div class="perfil-foto">
+        <img id="fotoPerfil" src="img/Logo.png" alt="Foto de perfil">
+        <div class="foto-overlay">
+          <button id="btnCambiar" type="button">Cambiar</button>
+          <button id="eliminarFoto" type="button">Eliminar</button>
+        </div>
+        <input type="file" id="inputFoto" accept="image/*" style="display:none">
       </div>
+
+      <div class="perfil-info">
+        <p><strong>Nombre:</strong> <span id="perfilNombre">Cargando...</span></p>
+        <p><strong>Correo:</strong> <span id="perfilCorreo">Cargando...</span></p>
+      </div>
+
+      <h3>Control emocional semanal</h3>
+      <div class="tabla-semanal">
+        <table>
+          <thead>
+            <tr>
+              <th>Día</th>
+              <th>Estado emocional</th>
+              <th>Consejo</th>
+            </tr>
+          </thead>
+          <tbody id="tablaEmociones">
+          </tbody>
+        </table>
+      </div>
+
+      <div class="acciones-perfil">
+        <button class="boton-final" onclick="window.location.href='cuestionario.html'">
+          Realizar nuevo cuestionario
+        </button>
+        <button class="boton-eliminar" id="eliminarCuentaBtn">
+          Eliminar cuenta
+        </button>
+      </div>
+    </section>
   </main>
-  <script src="js/perfil.js"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const usuario = JSON.parse(localStorage.getItem("usuarioActivo")) || {};
+      document.getElementById("perfilNombre").textContent = usuario.nombre || "Sin nombre";
+      document.getElementById("perfilCorreo").textContent = usuario.correo || "Sin correo";
+
+      const emocionesGuardadas = JSON.parse(localStorage.getItem("emocionesSemanales")) || [];
+      const tabla = document.getElementById("tablaEmociones");
+
+      emocionesGuardadas.forEach(e => {
+        const fila = document.createElement("tr");
+        fila.innerHTML = `
+          <td>${e.dia}</td>
+          <td class="estado-${e.estado.toLowerCase()}">${e.estado}</td>
+          <td>${e.consejo}</td>
+        `;
+        tabla.appendChild(fila);
+      });
+
+      // Cargar foto
+      const fotoGuardada = localStorage.getItem("fotoPerfil");
+      document.getElementById("fotoPerfil").src = fotoGuardada || "img/Logo.png";
+    });
+
+    function cerrarSesion() {
+      localStorage.removeItem("usuarioActivo");
+      window.location.href = "index.html";
+    }
+
+    document.getElementById("eliminarCuentaBtn").addEventListener("click", () => {
+      const confirmacion = confirm("¿Seguro que deseas eliminar tu cuenta? Esta acción no se puede deshacer.");
+      if (confirmacion) {
+        localStorage.clear();
+        alert("Tu cuenta ha sido eliminada.");
+        window.location.href = "index.html";
+      }
+    });
+
+    const inputFoto = document.getElementById('inputFoto');
+    const btnCambiar = document.getElementById('btnCambiar');
+    const btnEliminar = document.getElementById('eliminarFoto');
+    const fotoPerfil = document.getElementById('fotoPerfil');
+
+    btnCambiar.addEventListener('click', () => inputFoto.click());
+
+    inputFoto.addEventListener('change', (e) => {
+      const file = e.target.files[0];
+      if (!file) return;
+      if (!file.type.startsWith('image/')) {
+        alert('Por favor selecciona una imagen válida.');
+        return;
+      }
+      const reader = new FileReader();
+      reader.onload = (ev) => {
+        fotoPerfil.src = ev.target.result;
+        localStorage.setItem('fotoPerfil', ev.target.result);
+      };
+      reader.readAsDataURL(file);
+    });
+
+    btnEliminar.addEventListener('click', () => {
+      if (confirm('¿Eliminar foto de perfil?')) {
+        localStorage.removeItem('fotoPerfil');
+        fotoPerfil.src = 'img/Logo.png';
+      }
+    });
+  </script>
 </body>
 </html>
