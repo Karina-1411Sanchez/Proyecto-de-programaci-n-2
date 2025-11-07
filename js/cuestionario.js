@@ -40,5 +40,5 @@ form.addEventListener("submit", async (e) => {
     consejo,
   });
 
-  window.location.href = "resultados.html";
+  window.location.href = "Habitos.html";
 });

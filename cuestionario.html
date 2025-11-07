@@ -17,8 +17,8 @@
   </header>
 
   <main class="cuestionario-contenido">
-    <h2>Cuestionario diario de bienestar 🌿</h2>
-    <p>Responde con calma y sinceridad. Tus respuestas te ayudarán a reflexionar y mejorar tu bienestar emocional.</p>
+    <h2>Cuestionario de estado emocional</h2>
+    <p>Responde con honestidad. Tus respuestas te ayudarán a reflexionar tu bienestar emocional.</p>
 
     <form id="formCuestionario">
 
@@ -38,7 +38,6 @@
         <label><input type="radio" name="energia" value="Baja"> 🌙 Baja</label>
       </div>
 
-      <!-- DESCANSO -->
       <div class="pregunta">
         <h3>3. ¿Cómo dormiste anoche?</h3>
         <label><input type="radio" name="descanso" value="Bien" required> 😴 Bien</label>
@@ -47,15 +46,15 @@
       </div>
 
       <div class="pregunta">
-        <h3>4. ¿Qué tan concentrado/a te sientes hoy?</h3>
+        <h3>4. ¿Qué tan concentrado/a as estado hoy?</h3>
         <label><input type="radio" name="concentracion" value="Muy concentrado" required> 🎯 Muy concentrado/a</label>
         <label><input type="radio" name="concentracion" value="Poco concentrado"> 😵 Poco concentrado/a</label>
-        <label><input type="radio" name="concentracion" value="Distraído"> 💭 Distraído/a</label>
+        <label><input type="radio" name="concentracion" value="Distraído"> 💭 muy distraído/a</label>
       </div>
 
       <div class="pregunta">
         <h3>5. ¿Cómo han sido tus interacciones con los demás hoy?</h3>
-        <label><input type="radio" name="relaciones" value="Positivas" required> 💬 Positivas</label>
+        <label><input type="radio" name="relaciones" value="Positivas" required>  Positivas</label>
         <label><input type="radio" name="relaciones" value="Neutras"> 😐 Neutras</label>
         <label><input type="radio" name="relaciones" value="Difíciles"> 😠 Difíciles</label>
       </div>
@@ -114,15 +113,15 @@
     function generarConsejo(estado) {
       const consejos = {
         Feliz: "Mantén esa energía y compártela con los demás 🌞",
-        Triste: "Tómate un momento para ti, escuchar música o escribir puede ayudarte 💜",
+        Triste: "Tómate un momento para ti, as algo que te guste 💜",
         Estresado: "Recuerda que todo pasa, respira profundo y date un descanso 🌸",
         Tranquilo: "Aprovecha tu serenidad para hacer algo que te inspire ☕",
-        Ansioso: "Concéntrate en el presente y haz algo que te relaje 🌿",
-        Positivas: "Rodearte de personas que te sumen mejora tus días 💫",
+        Ansioso: "Relajate y fomenta habitos saludables, alimentate bien, descansa, as ejercicio y respira profundo🌿",
+        Positivas: "Rodearte de personas que te sumen, mejora tus días 💫",
         Difíciles: "Respira antes de reaccionar, la calma siempre ayuda 🌼",
-        Alta: "Aprovecha tu energía para avanzar en tus metas 🚀",
+        Alta: "Aprovecha tu energía para avanzar en tus metas y hacer lo que te gusta 🚀",
         Baja: "No te presiones, descansar también es productivo 🌙",
-        Bien: "Dormir bien te da poder para tener un gran día 💪",
+        Bien: "Dormir bien y llevar una vida saludable te da poder para tener un gran día 💪",
         Mal: "Evita pantallas antes de dormir, tu cuerpo necesita desconectarse 🌌",
         MuyMotivado: "Sigue soñando alto, cada paso cuenta 🌠",
         SinMotivacion: "No te castigues, incluso los días lentos suman 🌾",
@@ -132,7 +131,7 @@
       return consejos[estado] || "Recuerda que cada día es una nueva oportunidad para crecer 🌻";
     }
 
-    // === GUARDAR Y REDIRIGIR ===
+    // GUARDAR Y REDIRIGIR
     document.getElementById("formCuestionario").addEventListener("submit", (e) => {
       e.preventDefault();
 

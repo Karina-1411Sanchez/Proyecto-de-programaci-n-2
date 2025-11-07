@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cuestionario de Hábitos Saludables - Reflexión Virtual</title>
+  <link rel="stylesheet" href="css/estilos.css" />
+</head>
+<body class="fondo-cuestionario">
+
+  <header class="panel-superior">
+    <h1 class="titulo-app">Reflexión Virtual</h1>
+    <nav>
+      <button id="perfilBtn">Perfil</button>
+      <button id="cerrarSesionBtn">Cerrar sesión</button>
+    </nav>
+  </header>
+
+  <main class="cuestionario-contenido">
+    <h2>Cuestionario de Hábitos Saludables </h2>
+    <p>Responde con sinceridad. Este cuestionario te ayudará a reflexionar sobre tus hábitos diarios.</p>
+
+    <form id="formHabitos">
+
+      <div class="pregunta">
+        <h3>1. ¿Con qué frecuencia consumes frutas y verduras?</h3>
+        <label><input type="radio" name="alimentacion" value="Diario" required> 🥗 Todos los días</label>
+        <label><input type="radio" name="alimentacion" value="Algunas veces"> 🍎 Algunas veces</label>
+        <label><input type="radio" name="alimentacion" value="Rara vez"> Rara vez</label>
+      </div>
+
+      <div class="pregunta">
+        <h3>2. ¿Cuántos días a la semana haces ejercicio físico?</h3>
+        <label><input type="radio" name="ejercicio" value="Frecuente" required>  4 o más días</label>
+        <label><input type="radio" name="ejercicio" value="Moderado"> 🚶 2 a 3 días</label>
+        <label><input type="radio" name="ejercicio" value="Poco">  Ninguno</label>
+      </div>
+
+      <div class="pregunta">
+        <h3>3. ¿Cuánta agua bebes al día?</h3>
+        <label><input type="radio" name="agua" value="Suficiente" required>  Más de 6 vasos</label>
+        <label><input type="radio" name="agua" value="Moderada">  3 a 5 vasos</label>
+        <label><input type="radio" name="agua" value="Poca"> ☕Menos de 3 vasos</label>
+      </div>
+
+    
+      <div class="pregunta">
+        <h3>4. ¿Duermes entre 7 y 8 horas por noche?</h3>
+        <label><input type="radio" name="descanso" value="Sí" required> 😴 Sí, casi siempre</label>
+        <label><input type="radio" name="descanso" value="A veces"> 😕 cuando puedo</label>
+        <label><input type="radio" name="descanso" value="No"> 😫 No, duermo poco</label>
+      </div>
+
+      <div class="pregunta">
+        <h3>5. ¿Qué tanto tiempo pasas frente a pantallas?</h3>
+        <label><input type="radio" name="pantallas" value="Controlado" required>  Lo necesario</label>
+        <label><input type="radio" name="pantallas" value="Moderado">  Varias horas al dia</label>
+        <label><input type="radio" name="pantallas" value="Excesivo"> Todo el día</label>
+      </div>
+
+
+      <div class="pregunta">
+        <h3>6. ¿Qué hábito te gustaría mejorar?</h3>
+        <label><input type="checkbox" name="mejorar" value="Alimentación"> 🍎 Alimentación</label>
+        <label><input type="checkbox" name="mejorar" value="Ejercicio"> 🏃 Ejercicio</label>
+        <label><input type="checkbox" name="mejorar" value="Sueño"> 🌙 Sueño</label>
+        <label><input type="checkbox" name="mejorar" value="Pantallas"> Uso de pantallas</label>
+      </div>
+
+      <div class="boton-centro">
+        <button type="submit" class="boton-final">Enviar respuestas</button>
+      </div>
+    </form>
+  </main>
+
+  <script>
+    document.getElementById("perfilBtn").addEventListener("click", () => {
+      window.location.href = "perfil.html";
+    });
+    document.getElementById("cerrarSesionBtn").addEventListener("click", () => {
+      localStorage.clear();
+      window.location.href = "index.html";
+    });
+
+    function generarConsejoHabitos(respuestas) {
+      if (respuestas.ejercicio === "Poco" || respuestas.agua === "Poca" || respuestas.descanso === "No") {
+        return "Necesitas cuidar de tu vida saludable: duermer bien, toma agua y fomenta el ejercicio fisico, almenos sal a caminar  a trotar";
+      }
+      if (respuestas.pantallas === "Excesivo") {
+        return "Desconectate un poco de las pantallas, eso te ayuda a mejorar tu salud mental y fisica, ademas mejora el sueño🌿";
+      }
+      if (respuestas.alimentacion === "Diario" && respuestas.ejercicio === "Frecuente") {
+        return "¡Excelente! Mantén esos hábitos saludables y sigue cuidando de ti 💚";
+      }
+      return "Recuerda que los pequeños cambios diarios crean grandes resultados ";
+    }
+
+    // Guardar y redirigir
+    document.getElementById("formHabitos").addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      const form = e.target;
+      const data = new FormData(form);
+      const respuestas = Object.fromEntries(data.entries());
+
+      const mejoras = Array.from(document.querySelectorAll('input[name="mejorar"]:checked')).map(i => i.value);
+      respuestas.mejoras = mejoras;
+
+      const consejo = generarConsejoHabitos(respuestas);
+
+      const resultadoHabitos = {
+        fecha: new Date().toLocaleDateString("es-ES", { weekday: 'long', day: 'numeric', month: 'long' }),
+        ...respuestas,
+        consejo
+      };
+
+      window.location.href = "resultados.html";
+    });
+  </script>
+</body>
+</html>
